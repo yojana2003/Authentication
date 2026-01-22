@@ -1,14 +1,15 @@
 const express=require("express")
 const dotenv=require("dotenv")
 const connectDB =require("./config/db")
+const authRouter = require("./routes/auth.routes")
 dotenv.config()
 
-let app =express()
+const app =express()
 let port= process.env.PORT || 4000
 
-app.get("/",(req,res)=>{
-    res.send("hellow")
-})
+app.use(express.json())
+
+app.use("/api",authRouter)
 
 app.listen(port,()=>{
     connectDB()

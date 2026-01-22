@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    lastNmae:{
+    lastName:{
         type:String,
         required:true
     },
@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
     }
 },{timestamps:true})
 
+// CREATE MODEL FOR OPERATION USER CREATE OR DELETE
 
 const User = mongoose.model("User",userSchema)
 
